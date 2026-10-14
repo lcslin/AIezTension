@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AIezTension</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 280px;
+      background: #1a1a2e;
+      color: #ccc;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+    }
+    .header {
+      padding: 12px 14px 8px;
+      color: #e94560;
+      font-weight: bold;
+      font-size: 11px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    .header span { color: #0ff; }
+    .section {
+      padding: 10px 14px;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    .label {
+      font-size: 10px;
+      color: #666;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .toggle-row span { color: #aaa; }
+    /* toggle switch */
+    .switch { position: relative; display: inline-block; width: 36px; height: 20px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; inset: 0;
+      background: #333; border-radius: 20px; cursor: pointer;
+    }
+    .slider::before {
+      content: ''; position: absolute;
+      width: 14px; height: 14px; left: 3px; top: 3px;
+      background: #888; border-radius: 50%;
+    }
+    input:checked + .slider { background: #0a3a3a; }
+    input:checked + .slider::before { transform: translateX(16px); background: #0ff; }
+    .footer {
+      padding: 8px 14px;
+      font-size: 10px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">AIez<span>Tension</span></div>
+
+  <div class="section">
+    <div class="label">Animation control</div>
+    <div class="toggle-row">
+      <span>Remove the annoying animations</span>
+      <label class="switch">
+        <input type="checkbox" id="animToggle" aria-label="Remove the annoying animations" checked disabled>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">Captcha Demo</div>
+    <div style="color:#aaa; font-size:11px; line-height:1.6;">
+      Captcha codes are displayed and filled automatically when you open login.
+    </div>
+  </div>
+
+  <div class="footer">aieztrade.com · security demo only</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

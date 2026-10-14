@@ -1,0 +1,57 @@
+{
+  "version": "1.0.1",
+  "package": "AIezTension-1.0.1.zip",
+  "package_sha256": "aab234246749a91b4523f7a6380b4ccd77233a50be31ce4b93f9c1080f58ffc7",
+  "bundle": "AIezTension-store-materials-1.0.1.zip",
+  "images": {
+    "promo-small-440x280.png": [
+      440,
+      280
+    ],
+    "promo-marquee-1400x560.png": [
+      1400,
+      560
+    ],
+    "feature-01-animations-1280x800.png": [
+      1280,
+      800
+    ],
+    "feature-02-icon-1280x800.png": [
+      1280,
+      800
+    ],
+    "feature-03-captcha-1280x800.png": [
+      1280,
+      800
+    ],
+    "icon16.png": [
+      16,
+      16
+    ],
+    "icon32.png": [
+      32,
+      32
+    ],
+    "icon48.png": [
+      48,
+      48
+    ],
+    "icon128.png": [
+      128,
+      128
+    ]
+  },
+  "checks": [
+    "PNG dimensions and format",
+    "Opaque promotional and feature images",
+    "Manifest description length",
+    "Packaged source matches current source",
+    "ZIP integrity",
+    "JavaScript syntax"
+  ],
+  "pending": [
+    "Actual browser screenshots (local capture tool supplied)",
+    "Publish privacy policy at a public HTTPS URL",
+    "Verify store published version is lower than 1.0.1"
+  ]
+}

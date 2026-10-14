@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "AIezTension",
+  "version": "1.0.1",
+  "description": "關閉 aieztrade.com 的背景影片與動畫，提供簡潔控制面板，並展示登入 API 明文驗證碼的設計缺陷。",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "action": {
+    "default_title": "AIezTension",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "host_permissions": [
+    "https://www.aieztrade.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.aieztrade.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

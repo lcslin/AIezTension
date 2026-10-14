@@ -1,0 +1,43 @@
+AIezTension 1.0.1 上傳素材
+
+Package：AIezTension-1.0.1.zip
+此 ZIP 的根目錄包含 manifest.json 與必要執行檔，沒有宣傳圖、開發工具、舊截圖或 .DS_Store。版本已從本地 1.0.0 升至 1.0.1；若商店已發布版本高於或等於 1.0.1，需再增加 manifest 版本後重建。
+
+Store listing：
+• 名稱、簡短說明、完整說明：text/listing-zh-TW.txt
+• 更新說明：text/release-notes-1.0.1.txt
+• 商店 icon：images/icon128.png（128×128、每邊 16px 透明留白）
+• Small promo tile：images/promo-small-440x280.png（440×280）
+• Marquee promo tile：images/promo-marquee-1400x560.png（1400×560、選用）
+• 功能展示圖：images/feature-01/02/03-*.png（各 1280×800）
+  這三張是明確標示的介面示意與示範資料，不是新版網頁實拍截圖。可以用於呈現功能；建議以實際瀏覽器截圖補上核心使用畫面。
+
+Privacy practices：
+• 權限與審查說明：text/reviewer-notes.txt
+• 隱私政策：text/privacy-policy-zh-TW.txt；另附 privacy-policy.html，可發布到自己的公開 HTTPS 網址。
+• Remote code：No。
+• 如實揭露在本機處理網頁內容與驗證碼資訊；不要勾選或宣稱完全不處理資料。本工具不將資料傳送給開發者或第三方，但本機處理仍需揭露。
+• 尚未提供隱私政策公開 URL、開發者聯絡方式；需在既有商店帳戶填妥。
+
+截圖：
+本環境無法啟動瀏覽器，目前未取得新版實際截圖。舊 sc_store.png 不列入本次素材。
+可在自己的電腦上，於此專案根目錄執行：
+  npm install --prefix store-assets/tools --no-save --package-lock=false playwright
+  node store-assets/tools/capture-ui.cjs
+工具使用電腦已安裝的 Chrome；若位置不同，設定 CHROME_PATH 為 Chrome 執行檔路徑。
+工具以套件中的 content.js 在清楚標示的本機示範頁渲染，輸出 1280×800 PNG 並檢查面板開關、縮小/展開、驗證碼填入及 Esc 關閉。它不會登入網站，也不會發送任何網站請求。
+若需要正式網站實拍，安裝此 ZIP 解壓後的擴充功能，在 aieztrade.com 開啟新版面板後，以 Chrome DevTools 擷取 1280×800 的畫面。
+
+更新步驟：
+1. Chrome Web Store Developer Dashboard → 原商品 → Package → Upload New Package，選 AIezTension-1.0.1.zip。
+2. Store listing 更新文案、icon、宣傳圖與功能圖片/實際截圖。
+3. Privacy practices 更新用途、權限理由、本機資料處理揭露與公開隱私政策 URL。
+4. 檢視素材及填寫結果後再送審。本次僅製作檔案，尚未上傳或發布。
+
+官方規格：
+https://developer.chrome.com/docs/webstore/images
+https://developer.chrome.com/docs/webstore/update
+https://developer.chrome.com/docs/webstore/cws-dashboard-privacy
+https://developer.chrome.com/docs/webstore/program-policies/user-data-faq
+
+素材總包：AIezTension-store-materials-1.0.1.zip 包含執行檔、素材與工具，供保存及解壓使用；不可把素材總包當作擴充功能 Package 上傳。商店 Package 只使用 AIezTension-1.0.1.zip。

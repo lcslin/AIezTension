@@ -1,0 +1,25 @@
+Single purpose
+AIezTension provides a site-specific page helper for https://www.aieztrade.com/: controlling distracting background videos/animations and explaining the plaintext captcha response used by that site's login UI. The code is limited to this site's user-facing page controls.
+
+Permissions justification
+scripting: The toolbar popup uses chrome.scripting.executeScript in the MAIN world to read the animation state and invoke the same animation control function as the on-page panel.
+activeTab: Used to target the currently active tab when the user opens and operates the toolbar popup. No browsing history is stored.
+https://www.aieztrade.com/*: Required to inject the page helper at document_start on this specific site, disable background videos/animations, and observe the site's existing fetch responses for the login captcha demo. No other host permission is requested.
+
+Remote code
+No remotely hosted code. JavaScript, HTML and PNG assets are packaged locally. The response is parsed as JSON; it is not executed. The icon's data URL contains only a PNG image.
+
+Data handling
+The extension locally handles page DOM, the login-menu activation and the captcha response (vCode). It displays and fills the response value without persisting it or sending it to the developer/third parties. It does not read username/password inputs, submit login forms, or initiate captcha requests. Existing site network requests continue normally.
+Do not claim that the extension handles no data: Google requires disclosure even for local processing. Website content is handled; explain the local handling of captcha verification information and the login click in the relevant privacy fields.
+
+Review steps
+1. Open https://www.aieztrade.com/ with the extension enabled.
+2. The AIezTension panel opens at the right, centered vertically. Animation removal is checked by default.
+3. Toggle animation removal, collapse to the icon, reopen it and hide the panel with Exit (離開).
+4. Open the site's login menu (#btnMenu). If the site's GET /api/login/captcha response includes vCode, the extension fills the captcha field and opens a Chinese dialog describing the exposure.
+5. Close the dialog using Exit, Escape, or its backdrop. The extension does not submit login credentials.
+6. The captcha demonstration depends on the current site DOM and response shape. If the site has removed vCode, the extension correctly does not display a captured answer.
+
+Image disclosure
+The feature-*.png files are labeled interface illustrations, not live-site screenshots. Captcha value 8505 is fictional demo data. The capture tool can produce actual browser renderings of the packaged UI on a clearly labeled local fixture; those are still demo-page captures, not evidence of a live-site security finding.
